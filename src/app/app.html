@@ -32,10 +32,10 @@
     <li class="todo-item">
       <div class="item-left">
         <label class="custom-checkbox">
-          <input type="checkbox" />
+          <input type="checkbox" [checked]="todo.isCompleted ? true : false" (click)="mark($index)" />
           <span class="checkmark"></span>
         </label>
-        <span class="todo-text">{{ todo }}</span>
+        <span class="todo-text">{{ todo.text }}</span>
       </div>
       <div class="item-actions">
         <button class="btn-icon btn-edit" (click)="getTodo($index)"><i class="fas fa-pen"></i></button>
