@@ -17,7 +17,7 @@
 
   @if (isUpdateModeActive) {
   <div class="input-group">
-    <input type="text" [(ngModel)]="updatedTodo" placeholder="Update a todo..." />
+    <input type="text" [(ngModel)]="updatedTodo.text" placeholder="Update a todo..." />
     <button class="add-btn" (click)="updateTodo()"><i class="fas fa-edit"></i> Update</button>
   </div>
   } @else {
