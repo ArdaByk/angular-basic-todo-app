@@ -1,0 +1,261 @@
+
+
+/* --- ARKA PLAN PARLAMALARI (GLOW) --- */
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.glow-1 {
+    background: #7c3aed; /* Mor */
+    top: -200px;
+    left: -200px;
+}
+
+.glow-2 {
+    background: #4c1d95; /* Koyu Mor */
+    bottom: -200px;
+    right: -200px;
+}
+
+/* --- ANA KART (CONTAINER) --- */
+.container {
+    background: #18181b; /* Koyu gri kart rengi */
+    width: 100%;
+    max-width: 480px;
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid #27272a;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- BAŞLIK --- */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #a78bfa; /* Açık Mor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+header h1 i {
+    font-size: 1.2rem;
+}
+
+header p {
+    color: #71717a; /* Soluk gri */
+    font-size: 0.9rem;
+}
+
+/* --- INPUT ALANI --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    flex: 1;
+    background: #27272a;
+    border: 1px solid transparent;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #52525b;
+}
+
+.input-group input:focus {
+    border-color: #8b5cf6;
+    background: #202024;
+}
+
+.add-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+}
+
+/* --- GÖREV LİSTESİ --- */
+.todo-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.todo-item {
+    background: #27272a;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.todo-item:hover {
+    border-color: #3f3f46;
+    transform: translateX(5px);
+}
+
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-text {
+    font-size: 0.95rem;
+    color: #e4e4e7;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #71717a;
+}
+
+/* --- Custom Checkbox --- */
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-checkbox input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid #52525b;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+/* Check işareti (Pseudo element) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* --- BUTONLAR (Edit & Delete) --- */
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+/* Edit Butonu (Mor tonlu) */
+.btn-edit {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+}
+
+.btn-edit:hover {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* Delete Butonu (Kırmızı tonlu) */
+.btn-delete {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.btn-delete:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* --- FOOTER --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #71717a;
+    padding-top: 1rem;
+    border-top: 1px solid #27272a;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #71717a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-btn:hover {
+    color: #e4e4e7;
+}

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* --- GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #09090b; /* Çok koyu siyah/lacivert */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: #e4e4e7;
+}
