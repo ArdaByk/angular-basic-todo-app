@@ -15,37 +15,40 @@
     <p>Organize your tasks, organize your life.</p>
   </header>
 
-  @if (isUpdateModeActive) {
+  @if (todoService.isUpdateModeActive) {
   <div class="input-group">
-    <input type="text" [(ngModel)]="updatedTodo.text" placeholder="Update a todo..." />
-    <button class="add-btn" (click)="updateTodo()"><i class="fas fa-edit"></i> Update</button>
+    <input type="text" [(ngModel)]="todoService.updatedTodo.text" placeholder="Update a todo..." />
+    <button class="add-btn" (click)="todoService.updateTodo()"><i class="fas fa-edit"></i> Update</button>
   </div>
   } @else {
   <div class="input-group">
-    <input type="text" [(ngModel)]="todo" placeholder="Add a new todo..." />
-    <button class="add-btn" (click)="saveTodo()"><i class="fas fa-plus"></i> Add</button>
+    <input type="text" [(ngModel)]="todoService.todo" placeholder="Add a new todo..." />
+    <button class="add-btn" (click)="todoService.saveTodo()"><i class="fas fa-plus"></i> Add</button>
   </div>
   }
+   <div class="input-group">
+    <input type="text" [(ngModel)] = "todoService.searchValue" placeholder="Search a todo..." />
+  </div>
 
   <ul class="todo-list">
-    @for (todo of todos; track todo) {
+    @for (todo of todoService.todos | searchPipe:todoService.searchValue; track todo) {
     <li class="todo-item">
       <div class="item-left">
         <label class="custom-checkbox">
-          <input type="checkbox" [checked]="todo.isCompleted ? true : false" (click)="mark($index)" />
+          <input type="checkbox" [checked]="todo.isCompleted ? true : false" (click)="todoService.mark($index)" />
           <span class="checkmark"></span>
         </label>
         <span class="todo-text">{{ todo.text }}</span>
       </div>
       <div class="item-actions">
-        <button class="btn-icon btn-edit" (click)="getTodo($index)"><i class="fas fa-pen"></i></button>
-        <button class="btn-icon btn-delete" (click)="deleteTodo($index)"><i class="fas fa-trash"></i></button>
+        <button class="btn-icon btn-edit" (click)="todoService.getTodo($index)"><i class="fas fa-pen"></i></button>
+        <button class="btn-icon btn-delete" (click)="todoService.deleteTodo($index)"><i class="fas fa-trash"></i></button>
       </div>
     </li>
     }
   </ul>
 
   <div class="footer">
-    <button class="clear-btn" (click)="deleteAllTodos()">Delete all todos</button>
+    <button class="clear-btn" (click)="todoService.deleteAllTodos()">Delete all todos</button>
   </div>
 </div>
